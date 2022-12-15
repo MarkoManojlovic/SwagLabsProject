@@ -1,13 +1,11 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System.Security.Cryptography.X509Certificates;
 
 namespace SwagLabsProject.Driver
 {
     public class WebDrivers
     {
         public static IWebDriver? Instance { get; set; }
-
         public static void Initialize()
         {
             Instance = new ChromeDriver();

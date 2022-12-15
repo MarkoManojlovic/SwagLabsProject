@@ -25,33 +25,35 @@ namespace SwagLabsProject.Tests
         public void TC01_DoNotEnterAnyData()
         {
             loginPage.Login("", "");
-            Assert.That(Message_N01, Is.EqualTo(loginPage.AssertMessage.Text));
 
+            Assert.That(Message_N01, Is.EqualTo(loginPage.AssertMessage.Text));
         }
         [Test]
         public void TC02_EnterInvalidUserName_AndShouldNotBeLogged()
         {
             loginPage.Login("Marko", "secret_sauce");
-            Assert.That(Message_N02,Is.EqualTo(loginPage.AssertMessage.Text));
 
+            Assert.That(Message_N02, Is.EqualTo(loginPage.AssertMessage.Text));
         }
         [Test]
         public void TC03_EnterInvalidPassword_AndShouldNotBeLogged()
         {
             loginPage.Login("standard_user", "marko12345");
+            
             Assert.That(Message_N02, Is.EqualTo(loginPage.AssertMessage.Text));
-
         }
         [Test]
         public void TC04_EnterInvalidUserNameAndPassword_ShouldNotBeLogged()
         {
             loginPage.Login("Marko", "Manojlovic");
+
             Assert.That(Message_N02, Is.EqualTo(loginPage.AssertMessage.Text));
         }
         [Test]
         public void TC05_EnterValidUserNameAndPassword_ShouldBeLogged()
         {
             loginPage.Login("standard_user", "secret_sauce");
+
             Assert.That("https://www.saucedemo.com/inventory.html", Is.EqualTo(WebDrivers.Instance.Url));
         }
     }

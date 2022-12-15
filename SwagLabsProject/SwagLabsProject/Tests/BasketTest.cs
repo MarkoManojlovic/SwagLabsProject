@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SwagLabsProject.Tests
 {
-    public class BuyingProductTest
+    public class BasketTest
     {
         ProductPage productPage;
         LoginPage loginPage;
@@ -24,7 +24,6 @@ namespace SwagLabsProject.Tests
             cartPage = new CartPage();
         }
         [TearDown]
-        
         public void Close()
         {
             WebDrivers.CleanUp();
@@ -37,8 +36,8 @@ namespace SwagLabsProject.Tests
             productPage.Add_Tshirt.Click();
             productPage.AddBikeLigt.Click();
             productPage.Add_BoltTshirt.Click();
-            Assert.That("3", Is.EqualTo(productPage.AssertForCart.Text));
 
+            Assert.That("3", Is.EqualTo(productPage.AssertForCart.Text));
         }
         [Test]
         public void TC02_RemoveProductFromBasket()
@@ -50,10 +49,8 @@ namespace SwagLabsProject.Tests
             cartPage.ButtonRemoveBackPack.Click();
             cartPage.ButtonRemoveJacket.Click();
             cartPage.ContiniueShopping.Click();
-            //Assert.That(cartPage.AssertEmptyBasket.Displayed);
-            Assert.That("", Is.EqualTo(cartPage.AssertEmptyBasket.Text));
             
-
+            Assert.That("", Is.EqualTo(cartPage.AssertEmptyBasket.Text));
         }
     }
 }

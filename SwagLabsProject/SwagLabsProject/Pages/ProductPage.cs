@@ -16,13 +16,12 @@ namespace SwagLabsProject.Pages
         public IWebElement ButtonCart => driver.FindElement(By.Id("shopping_cart_container"));
         public IWebElement AddBackPack => driver.FindElement(By.Id("add-to-cart-sauce-labs-backpack"));
         public IWebElement AddFleeceJacket => driver.FindElement(By.Id("add-to-cart-sauce-labs-fleece-jacket"));
-
+        public IWebElement AddRedTest_Tshirt => driver.FindElement(By.Id("add-to-cart-test.allthethings()-t-shirt-(red)"));
 
         public void SelectOption(string text)
         {
             SelectElement element = new SelectElement(SortByPrice);
             element.SelectByText(text);
         }
-    }  
-   
+    }
 }

@@ -1,10 +1,5 @@
 ﻿using SwagLabsProject.Driver;
 using SwagLabsProject.Pages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SwagLabsProject.Tests
 {
@@ -49,7 +44,7 @@ namespace SwagLabsProject.Tests
             cartPage.ButtonRemoveBackPack.Click();
             cartPage.ButtonRemoveJacket.Click();
             cartPage.ContiniueShopping.Click();
-            
+
             Assert.That("", Is.EqualTo(cartPage.AssertEmptyBasket.Text));
         }
     }

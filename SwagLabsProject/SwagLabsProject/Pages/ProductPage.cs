@@ -18,6 +18,8 @@ namespace SwagLabsProject.Pages
         public IWebElement AddFleeceJacket => driver.FindElement(By.Id("add-to-cart-sauce-labs-fleece-jacket"));
         public IWebElement AddRedTest_Tshirt => driver.FindElement(By.Id("add-to-cart-test.allthethings()-t-shirt-(red)"));
 
+        public string ProductPageUrl= "https://www.saucedemo.com/inventory.html";
+
         public void SelectOption(string text)
         {
             SelectElement element = new SelectElement(SortByPrice);
